@@ -1,0 +1,33 @@
+/* pricing — P1: two equal cards, no price. Source: mockup `.pr` rules. Head margin comes from .head (48 / 32). */
+.pricing .pricing-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.pricing .pricing-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-lg); display: flex; flex-direction: column; min-width: 0; }
+.pricing .pricing-top { padding: 30px 30px 30px 28px; display: grid; gap: 14px; justify-items: start; border-bottom: 1px solid var(--c-border); }
+.pricing .pricing-ic { width: 40px; height: 40px; border-radius: 10px; background: var(--c-navy); display: grid; place-items: center; }
+.pricing .pricing-ic svg { width: 22px; height: 22px; fill: none; stroke: var(--c-porcelain); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.pricing .pricing-name { margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 28px; line-height: 1.15; }
+.pricing .pricing-one { margin: 0; font-size: 17px; line-height: 1.5; }
+.pricing .pricing-body { padding: 30px 30px 30px 28px; display: flex; flex-direction: column; gap: 18px; flex: 1; }
+.pricing .lbl { font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-label); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-text-2); }
+.pricing ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; font-size: 16px; line-height: 1.45; }
+.pricing li { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 12px; }
+.pricing li::before { content: ""; width: 7px; height: 7px; margin-top: 8px; border-radius: 2px; background: var(--c-button); }
+.pricing li.all, .pricing li.key { font-weight: 600; }
+.pricing li.all::before { background: var(--c-navy); }
+.pricing .pricing-go { margin-top: auto; padding-top: 12px; }
+.pricing .pricing-spots { margin: 40px 0 0; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: var(--fs-small); color: var(--c-text-2); text-align: center; }
+.pricing .pricing-spots i { display: inline-flex; gap: 4px; flex: none; }
+.pricing .pricing-spots b { width: 9px; height: 9px; border-radius: 50%; background: var(--c-button); display: block; }
+
+@media (max-width: 899.98px) {
+  .pricing .pricing-row { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .pricing .pricing-top, .pricing .pricing-body { padding: 24px 22px; }
+  .pricing .pricing-name { font-size: 26px; }
+  .pricing .pricing-one { font-size: 16px; }
+  .pricing ul { font-size: 15px; gap: 12px; }
+  .pricing .pricing-go .btn { width: 100%; }
+  .pricing .pricing-spots { margin-top: 28px; font-size: 14px; text-align: left; }
+}
+
+/* section gap measured to the mockup heading position (replaces the 160 / 80 .section rhythm) */
+.pricing { margin-top: 13px; }
+@media (max-width: 899.98px) { .pricing { margin-top: 102px; } }

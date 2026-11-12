@@ -1,0 +1,97 @@
+/* Design tokens. Source: landing-progress-2026-11-10.html (.site and .site.ph rules). Light theme only. */
+:root {
+  /* colors */
+  --c-navy: #162760;            /* ink, primary button, dark panels */
+  --c-navy-hover: #1f3380;      /* primary button hover (not in mockup) */
+  --c-porcelain: #fcfffc;       /* page background */
+  --c-white: #ffffff;           /* cards, header card */
+  --c-text-2: #676d7a;          /* secondary text */
+  --c-text-3: #b9bdc7;          /* muted / inactive text */
+  --c-border: #e5e8ed;          /* hairlines, card borders */
+  --c-border-2: #d1d4dc;        /* stronger borders, dashed frames */
+  --c-marker: #fbd387;          /* highlighter marker */
+  --c-link-underline: #fdbe45;  /* link underline accent */
+  --c-button: #f6a700;          /* accent button, bullets */
+  --c-tint: #f1f3f8;            /* active row, summary panels */
+  --c-tint-2: #f4f6fa;          /* scene backgrounds */
+  --c-tint-3: #eef1f6;          /* small number chips */
+  --c-on-navy-soft: #c4d6f9;    /* secondary text on navy */
+  --c-amber-text: #ac6600;      /* amber text accent */
+  --c-paper: #fdfdf7;           /* notebook paper */
+  --c-paper-grid: rgba(70, 110, 180, .17);
+  --c-pen: #1f3a8a;             /* handwriting ink */
+  --c-pencil: #8a8f9c;          /* handwriting pencil */
+  --c-focus: var(--c-navy);
+
+  /* font families */
+  --font-serif: "Zodiak", Georgia, "Times New Roman", serif;   /* headings (Zodiak 400) */
+  --font-sans: "Mona Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;  /* eyebrow labels only */
+  --font-hand: "Kalam", "Segoe Print", cursive;                /* Why us note only */
+
+  /* type scale (desktop; phone overrides below) */
+  --fs-h1: 60px;  --lh-h1: 1.16;  --ls-h1: -0.02em;
+  --fs-h2: 48px;  --lh-h2: 1.08;  --ls-h2: -0.015em;
+  --fs-lead: 20px; --lh-lead: 1.45;
+  --fs-sub: 18px;
+  --fs-body: 16px; --lh-body: 1.55;
+  --fs-small: 15px;
+  --fs-xs: 13px;
+  --fs-eyebrow: 12px; --lh-eyebrow: 1.55; --ls-eyebrow: .09em;
+  --fs-label: 12px;  --ls-label: .06em;      /* uppercase sans label (.lbl) */
+  --fs-wordmark: 26px;
+  --fs-btn: 15px;
+
+  /* radius */
+  --r-xs: 4px;     /* marker */
+  --r-sm: 8px;
+  --r-btn: 10px;   /* buttons, inner frames */
+  --r-md: 12px;    /* header card, panels, cards */
+  --r-lg: 16px;    /* pricing cards, table */
+  --r-pill: 999px;
+
+  /* shadows */
+  --shadow-header: 0 4px 12px rgba(10, 22, 68, .06);   /* header after scroll */
+  --shadow-card: 0 10px 30px rgba(10, 22, 68, .06);
+  --shadow-ui: 0 6px 18px rgba(10, 22, 68, .07);        /* scene mini-UI */
+  --shadow-tile: 0 1px 2px rgba(10, 22, 68, .05), 0 8px 20px rgba(10, 22, 68, .07);
+  --shadow-post: 0 2px 4px rgba(10, 22, 68, .05), 0 22px 40px rgba(10, 22, 68, .10);
+
+  /* spacing / layout */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px;  --space-8: 80px;  --space-9: 160px;
+  --container: 1104px;           /* content column width, centered */
+  --gutter: 32px;                /* min side padding of the column */
+  --section-gap: 160px;          /* between sections */
+  --heading-gap: 48px;           /* section heading -> content */
+  --head-inner-gap: 16px;        /* eyebrow / h2 / sub inside .head */
+  --h2-max: 760px;
+  --header-pad-top: 16px;
+  --header-h: 64px;
+  --anchor-offset: 104px;        /* scroll-margin-top for anchors (sticky header) */
+
+  /* motion */
+  --dur-fast: .25s;
+  --dur-med: .35s;
+  --dur-slow: .7s;
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --ease-pop: cubic-bezier(.3, 1.6, .5, 1);
+}
+
+/* phone: below 900px */
+@media (max-width: 899.98px) {
+  :root {
+    --fs-h1: 34px;
+    --fs-h2: 32px;
+    --fs-lead: 17px;
+    --fs-sub: 16px;
+    --fs-eyebrow: 11px; --lh-eyebrow: 1.5;
+    --fs-wordmark: 22px;
+    --gutter: 16px;
+    --section-gap: 80px;
+    --heading-gap: 32px;
+    --header-pad-top: 12px;
+    --header-h: 56px;
+    --anchor-offset: 84px;
+  }
+}

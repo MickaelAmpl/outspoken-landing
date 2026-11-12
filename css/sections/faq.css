@@ -1,0 +1,32 @@
+/* faq — QB: heading left, questions right (accepted exception to centred headings). Source: mockup `.fq` rules. */
+.faq .faq-two { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: clamp(40px, 6.5vw, 72px); align-items: start; }
+.faq .faq-left { display: grid; gap: 16px; align-content: start; justify-items: start; }
+.faq .faq-left .h2 { text-align: left; max-width: none; font-size: 44px; }
+.faq .faq-tx { margin: 0; font-size: 18px; line-height: 1.5; color: var(--c-text-2); text-wrap: balance; }
+.faq .faq-acc { border-bottom: 1px solid var(--c-border); }
+.faq .faq-q { border-top: 1px solid var(--c-border); }
+.faq .faq-h { margin: 0; font: inherit; }
+.faq .faq-row { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: 44px minmax(0, 1fr) 24px; gap: 12px; align-items: baseline; padding: 20px 0; cursor: pointer; }
+.faq .faq-row:focus-visible { outline: 2px solid var(--c-navy); outline-offset: 2px; }
+.faq .faq-no { font-family: var(--font-sans); font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--c-text-2); }
+.faq .faq-t { font-family: var(--font-serif); font-weight: 400; font-size: 21px; line-height: 1.25; }
+.faq .faq-pm { font-family: var(--font-sans); font-size: 22px; color: var(--c-text-2); text-align: right; }
+.faq .faq-pm::before { content: "+"; }
+.faq .faq-row[aria-expanded="true"] .faq-pm::before { content: "–"; }
+.faq .faq-a { margin: -10px 36px 0 56px; padding-bottom: 20px; font-size: 16px; line-height: 1.55; }
+/* closed: no box left over (hidden=until-found keeps the box, so drop margin and padding) */
+.faq .faq-q:not(.open) .faq-a { margin: 0; padding: 0; }
+
+@media (max-width: 899.98px) {
+  .faq .faq-two { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .faq .faq-left { gap: 14px; }
+  .faq .faq-left .h2 { font-size: var(--fs-h2); }
+  .faq .faq-tx { font-size: 16px; }
+  .faq .faq-row { grid-template-columns: 30px minmax(0, 1fr) 20px; gap: 10px; padding: 18px 0; }
+  .faq .faq-t { font-size: 18px; }
+  .faq .faq-a { margin: -8px 0 0 40px; padding-bottom: 18px; font-size: 15px; }
+}
+
+/* section gap measured to the mockup heading position (replaces the 160 / 80 .section rhythm) */
+.faq { margin-top: 153px; }
+@media (max-width: 899.98px) { .faq { margin-top: 63px; } }

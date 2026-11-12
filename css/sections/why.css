@@ -1,0 +1,66 @@
+/* Why us: note torn from a squared spiral notebook, taped, two founder prints. Kalam is used only inside the note.
+   Desktop: the desk was drawn for 1104px. Every dimension is N * var(--u), where --u = one mockup pixel = container width / 1104,
+   so the whole composition scales with the column (836px at a 900px window). Phone (< 900px): natural layout, fixed px as in the mockup. */
+.why .container { --u: calc(100cqw / 1104); container-type: inline-size; }
+
+.why .paper { position: relative; background-color: var(--c-paper); background-image: linear-gradient(var(--c-paper-grid) 1px, transparent 1px), linear-gradient(90deg, var(--c-paper-grid) 1px, transparent 1px); background-size: calc(18 * var(--u)) calc(18 * var(--u)); background-position: -1px -1px; }
+.why .hand { font-family: var(--font-hand); color: var(--c-pen); }
+.why .hand p { margin: 0; }
+.why .shadow { filter: drop-shadow(0 1px 1px rgba(10, 22, 68, .08)) drop-shadow(0 18px 30px rgba(10, 22, 68, .12)); }
+.why .tape { position: absolute; z-index: 4; width: calc(112 * var(--u)); height: calc(30 * var(--u)); background: rgba(233, 224, 196, .82); box-shadow: 0 1px 2px rgba(10, 22, 68, .08);
+  clip-path: polygon(0 8%, 4% 0, 8% 10%, 12% 0, 88% 0, 92% 10%, 96% 0, 100% 8%, 100% 92%, 96% 100%, 92% 90%, 88% 100%, 12% 100%, 8% 90%, 4% 100%, 0 92%); }
+.why .holes { position: absolute; inset: 0; pointer-events: none; }
+.why .hole { position: absolute; top: calc(15 * var(--u)); width: calc(13 * var(--u)); height: calc(13 * var(--u)); border-radius: 50%; background: var(--c-porcelain); box-shadow: inset 0 calc(1.5 * var(--u)) calc(2 * var(--u)) rgba(10, 22, 68, .28); z-index: 2; }
+.why .hole.hp { display: none; }
+.why .desk { position: relative; height: calc(820 * var(--u)); margin-top: calc(11 * var(--u)); }   /* 48px head gap + 11 = 59px to the desk top, so the top tape edge sits 48px under the heading as in the mockup */
+.why .sheetwrap { position: absolute; left: calc(20 * var(--u)); top: calc(6 * var(--u)); width: calc(780 * var(--u)); transform: rotate(-1.4deg); }
+.why .sheet { padding: calc(66 * var(--u)) calc(60 * var(--u)) calc(48 * var(--u)) calc(74 * var(--u)); clip-path: polygon(0.00% calc(3.9 * var(--u)),1.43% calc(4.5 * var(--u)),2.86% calc(0.9 * var(--u)),4.29% calc(2.0 * var(--u)),5.71% calc(3.5 * var(--u)),7.14% calc(4.1 * var(--u)),8.57% calc(0.6 * var(--u)),10.00% calc(7.0 * var(--u)),11.43% calc(4.7 * var(--u)),12.86% calc(3.3 * var(--u)),14.29% calc(2.3 * var(--u)),15.71% calc(6.3 * var(--u)),17.14% calc(5.3 * var(--u)),18.57% calc(0.6 * var(--u)),20.00% calc(4.0 * var(--u)),21.43% calc(1.9 * var(--u)),22.86% calc(5.4 * var(--u)),24.29% calc(1.3 * var(--u)),25.71% calc(4.5 * var(--u)),27.14% calc(3.9 * var(--u)),28.57% calc(1.4 * var(--u)),30.00% calc(0.4 * var(--u)),31.43% calc(7.5 * var(--u)),32.86% calc(7.8 * var(--u)),34.29% calc(1.0 * var(--u)),35.71% calc(3.6 * var(--u)),37.14% calc(7.6 * var(--u)),38.57% calc(1.5 * var(--u)),40.00% calc(3.4 * var(--u)),41.43% calc(4.4 * var(--u)),42.86% calc(5.4 * var(--u)),44.29% calc(2.2 * var(--u)),45.71% calc(1.4 * var(--u)),47.14% calc(7.9 * var(--u)),48.57% calc(3.6 * var(--u)),50.00% calc(1.9 * var(--u)),51.43% calc(4.4 * var(--u)),52.86% calc(2.6 * var(--u)),54.29% calc(1.2 * var(--u)),55.71% calc(6.2 * var(--u)),57.14% calc(2.8 * var(--u)),58.57% calc(2.8 * var(--u)),60.00% calc(0.6 * var(--u)),61.43% calc(7.4 * var(--u)),62.86% calc(1.9 * var(--u)),64.29% calc(7.1 * var(--u)),65.71% calc(3.8 * var(--u)),67.14% calc(1.9 * var(--u)),68.57% calc(4.8 * var(--u)),70.00% calc(3.2 * var(--u)),71.43% calc(6.1 * var(--u)),72.86% calc(5.2 * var(--u)),74.29% calc(1.1 * var(--u)),75.71% calc(1.8 * var(--u)),77.14% calc(3.6 * var(--u)),78.57% calc(0.7 * var(--u)),80.00% calc(0.4 * var(--u)),81.43% calc(3.3 * var(--u)),82.86% calc(5.4 * var(--u)),84.29% calc(5.2 * var(--u)),85.71% calc(7.6 * var(--u)),87.14% calc(2.6 * var(--u)),88.57% calc(3.5 * var(--u)),90.00% calc(4.0 * var(--u)),91.43% calc(3.5 * var(--u)),92.86% calc(6.7 * var(--u)),94.29% calc(3.6 * var(--u)),95.71% calc(3.5 * var(--u)),97.14% calc(2.1 * var(--u)),98.57% calc(1.9 * var(--u)),100.00% calc(5.9 * var(--u)),100% 100%,0% 100%); }
+.why .sheet .hand { font-size: calc(25 * var(--u)); line-height: calc(36 * var(--u)); }
+.why .sheet .hand p + p { margin-top: calc(18 * var(--u)); }
+.why .sign { margin-top: calc(18 * var(--u)); font-size: calc(27 * var(--u)); }
+.why .src { margin-top: calc(18 * var(--u)); font-family: var(--font-hand); color: var(--c-pencil); font-size: calc(17 * var(--u)); line-height: calc(36 * var(--u)); }
+.why .print { position: absolute; z-index: 3; background: #fff; padding: calc(12 * var(--u)) calc(12 * var(--u)) calc(10 * var(--u)); border: 1px solid rgba(140, 140, 140, .2); }
+.why .print img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block; }
+.why .print .cap { font-family: var(--font-hand); color: var(--c-pen); font-size: calc(20 * var(--u)); line-height: 1.1; margin: calc(8 * var(--u)) 0 0; }
+.why .p1 { left: calc(840 * var(--u)); top: calc(30 * var(--u)); width: calc(240 * var(--u)); transform: rotate(4deg); }
+.why .p2 { left: calc(860 * var(--u)); top: calc(400 * var(--u)); width: calc(240 * var(--u)); transform: rotate(-3deg); }
+.why .t1 { left: calc(900 * var(--u)); top: calc(14 * var(--u)); transform: rotate(-8deg); }
+.why .t2 { left: calc(925 * var(--u)); top: calc(386 * var(--u)); transform: rotate(6deg); }
+.why .t3 { left: calc(360 * var(--u)); top: calc(-8 * var(--u)); transform: rotate(3deg); }
+
+/* highlighter (mockup accents block) */
+.why .ac.hl { background: linear-gradient(transparent 38%, rgba(251, 211, 135, .9) 38%, rgba(251, 211, 135, .9) 90%, transparent 90%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding: 0 .08em; mix-blend-mode: multiply; }
+
+@media (max-width: 899.98px) {
+  .why .container { container-type: normal; }
+  .why .paper { background-size: 13.5px 13.5px; }
+  .why .hole { top: 12px; width: 9px; height: 9px; box-shadow: inset 0 1.5px 2px rgba(10, 22, 68, .28); }
+  .why .hole.hd { display: none; }
+  .why .hole.hp { display: block; }
+  .why .desk { height: auto; margin-top: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 16px; padding-top: 4px; }
+  .why .sheetwrap { position: relative; left: auto; top: auto; width: auto; grid-column: 1 / -1; transform: rotate(-.8deg); }
+  .why .sheet { padding: 44px 22px 30px 26px; clip-path: polygon(0.00% 1.1px,1.43% 2.2px,2.86% 6.1px,4.29% 6.9px,5.71% 7.7px,7.14% 7.4px,8.57% 6.9px,10.00% 6.0px,11.43% 5.1px,12.86% 4.4px,14.29% 0.2px,15.71% 2.6px,17.14% 2.9px,18.57% 1.7px,20.00% 3.1px,21.43% 5.5px,22.86% 5.9px,24.29% 2.1px,25.71% 7.7px,27.14% 0.1px,28.57% 2.9px,30.00% 4.7px,31.43% 3.5px,32.86% 0.7px,34.29% 7.9px,35.71% 3.7px,37.14% 7.0px,38.57% 4.7px,40.00% 3.8px,41.43% 1.0px,42.86% 6.3px,44.29% 7.2px,45.71% 2.1px,47.14% 0.2px,48.57% 1.2px,50.00% 5.7px,51.43% 5.6px,52.86% 5.3px,54.29% 7.0px,55.71% 1.8px,57.14% 6.6px,58.57% 1.3px,60.00% 0.3px,61.43% 0.7px,62.86% 0.2px,64.29% 4.3px,65.71% 6.6px,67.14% 6.7px,68.57% 1.2px,70.00% 4.0px,71.43% 0.4px,72.86% 2.2px,74.29% 3.9px,75.71% 0.5px,77.14% 2.8px,78.57% 1.8px,80.00% 2.4px,81.43% 6.3px,82.86% 1.1px,84.29% 1.3px,85.71% 0.0px,87.14% 5.0px,88.57% 0.7px,90.00% 3.2px,91.43% 0.9px,92.86% 3.8px,94.29% 3.3px,95.71% 0.1px,97.14% 6.1px,98.57% 3.6px,100.00% 5.9px,100% 100%,0% 100%); }
+  .why .sheet .hand { font-size: 18px; line-height: 27px; }
+  .why .sheet .hand p + p { margin-top: 13px; }
+  .why .sign { margin-top: 13px; font-size: 20px; }
+  .why .src { margin-top: 13px; font-size: 14px; line-height: 27px; }
+  .why .print { position: relative; left: auto; top: auto; width: auto; padding: 8px 8px 6px; }
+  .why .print .cap { font-size: 17px; margin-top: 8px; }
+  .why .p1 { transform: rotate(-2deg); }
+  .why .p2 { transform: rotate(2deg); }
+  .why .tape { display: none; }
+}
+
+/* section gap measured to the mockup heading position (replaces the 160 / 80 .section rhythm) */
+.why { margin-top: 163px; }
+@media (max-width: 899.98px) { .why { margin-top: 59px; } }
+
+/* LinkedIn icon next to each founder name: the icon is the link, the name is plain text */
+.why .print .cap .cap-in { display: inline-flex; align-items: center; justify-content: center; vertical-align: middle; margin-left: calc(6 * var(--u)); padding: calc(3 * var(--u)); color: var(--c-navy); border-radius: var(--r-xs); text-decoration: none; transition: color var(--dur-fast), box-shadow var(--dur-fast); }
+.why .print .cap .cap-in svg { display: block; width: calc(16 * var(--u)); height: calc(16 * var(--u)); fill: currentColor; }
+.why .print .cap .cap-in:hover { color: var(--c-navy-hover); box-shadow: 0 0 0 2px var(--c-link-underline); }
+.why .print .cap .cap-in:focus-visible { outline: 2px solid var(--c-focus); outline-offset: 2px; box-shadow: 0 0 0 2px var(--c-link-underline); }
+@media (max-width: 899.98px) {
+  .why .print .cap .cap-in { margin-left: 6px; padding: 4px; }
+  .why .print .cap .cap-in svg { width: 16px; height: 16px; }
+}

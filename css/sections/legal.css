@@ -1,0 +1,20 @@
+/* legal pages (privacy.html): one centred text column. Placeholders are marigold markers so a template cannot ship by mistake. */
+.legal-page { margin-top: 64px; }
+.legal-page .col { width: min(720px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+.legal-page h1 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); text-wrap: balance; }
+.legal-page .updated { margin-top: var(--space-3); color: var(--c-text-2); font-size: var(--fs-small); }
+.legal-page h2 { margin-top: var(--space-7); font-family: var(--font-serif); font-weight: 400; font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; }
+.legal-page h3 { margin-top: var(--space-5); font-size: var(--fs-body); font-weight: 600; line-height: 1.4; }
+.legal-page p, .legal-page ul { margin-top: var(--space-3); }
+.legal-page ul { padding-left: 1.2em; list-style: disc; }
+.legal-page li::marker { color: var(--c-button); }
+.legal-page li + li { margin-top: var(--space-1); }
+.legal-page a { text-decoration: underline; text-decoration-color: var(--c-link-underline); text-underline-offset: 4px; }
+.legal-page a:hover { text-decoration-color: var(--c-navy); }
+.legal-page .ph { font-family: var(--font-mono); font-size: .88em; background: var(--c-marker); color: var(--c-navy); padding: 1px 6px; border-radius: var(--r-xs); overflow-wrap: anywhere; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.legal-page + .site-footer { margin-top: 96px; }
+@media (max-width: 899.98px) {
+  .legal-page { margin-top: 40px; }
+  .legal-page h2 { margin-top: var(--space-6); font-size: 22px; }
+  .legal-page + .site-footer { margin-top: 64px; }
+}

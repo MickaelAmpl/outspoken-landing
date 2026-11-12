@@ -1,0 +1,19 @@
+/* footer — mockup .foot. Margin keeps the mockup's geometry: border 126 / 55 below the CTA panel, first text line lands at ~160 / ~80. */
+.site-footer { width: min(var(--container), 100% - 2 * var(--gutter)); margin: 126px auto 0; border-top: 1px solid var(--c-border); padding: 30px 0 40px; }
+.site-footer .r1 { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.site-footer .wm { font-family: var(--font-serif); font-size: var(--fs-wordmark); line-height: 1; justify-self: start; }
+.site-footer .nav2 { display: flex; gap: 30px; font-size: var(--fs-small); }
+.site-footer .right { justify-self: end; display: flex; align-items: center; gap: 20px; font-size: var(--fs-small); }
+.site-footer .nav2 a, .site-footer .mail, .site-footer .legal a { text-underline-offset: 5px; text-decoration-color: var(--c-border-2); }
+.site-footer .nav2 a:hover, .site-footer .mail:hover, .site-footer .legal a:hover { text-decoration-line: underline; }
+.site-footer .r2 { margin-top: 34px; display: flex; justify-content: space-between; font-size: 13.5px; color: var(--c-text-2); }
+.site-footer .legal a + a { margin-left: 22px; }
+
+@media (max-width: 899.98px) {
+  .site-footer { margin-top: 55px; padding: 24px 0 28px; text-align: center; }
+  .site-footer .r1 { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 14px; }
+  .site-footer .wm { justify-self: center; font-size: var(--fs-wordmark); }
+  .site-footer .nav2 { gap: 22px; font-size: 14px; flex-wrap: wrap; justify-content: center; row-gap: 8px; }
+  .site-footer .right { justify-self: center; gap: 14px; }
+  .site-footer .r2 { margin-top: 22px; flex-direction: column; align-items: center; gap: 8px; }
+}

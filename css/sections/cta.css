@@ -1,0 +1,19 @@
+/* cta — KC: navy panel, two founder photos. Source: mockup `.cta` rules. Space below the panel belongs to the footer. */
+.cta .cta-panel { background: var(--c-navy); color: var(--c-porcelain); border-radius: var(--r-md); padding: 72px 24px 70px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+.cta .cta-pair { display: inline-flex; }
+.cta .cta-pair img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 3px solid var(--c-navy); display: block; box-shadow: 0 0 0 1px rgba(196, 214, 249, .35); }
+.cta .cta-pair img + img { margin-left: -16px; }
+.cta .cta-names { margin: 0; font-size: var(--fs-small); color: var(--c-on-navy-soft); }
+.cta .cta-names b { color: var(--c-porcelain); font-weight: 600; }
+.cta .h2 { color: var(--c-porcelain); }
+.cta .cta-sub { margin: 0; font-size: var(--fs-sub); color: var(--c-on-navy-soft); }
+
+@media (max-width: 899.98px) {
+  .cta .cta-panel { padding: 44px 20px 40px; gap: 14px; }
+  .cta .cta-pair img { width: 56px; height: 56px; }
+  .cta .btn.y { width: 100%; }
+}
+
+/* section gap measured to the mockup heading position (replaces the 160 / 80 .section rhythm) */
+.cta { margin-top: 139px; }
+@media (max-width: 899.98px) { .cta { margin-top: 61px; } }

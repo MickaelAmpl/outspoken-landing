@@ -1,0 +1,4 @@
+/* 404 page: one centred block between header and footer */
+.notfound { min-height: 56vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-4); text-align: center; padding: var(--space-8) var(--gutter) 0; }
+.notfound .h2 { margin: 0; }
+.notfound .btn { margin-top: var(--space-3); display: inline-flex; align-items: center; justify-content: center; }

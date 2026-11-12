@@ -1,0 +1,29 @@
+/* header — sticky card (mockup .hdr / .card-hd / .wm / .nav / .burger) */
+.site-header { position: sticky; top: 0; z-index: 20; padding-top: var(--header-pad-top);
+  background: linear-gradient(var(--c-porcelain) var(--header-pad-top), rgba(252, 255, 252, 0) var(--header-pad-top)); }
+.site-header .card-hd { position: relative; z-index: 1; width: min(var(--container), 100% - 2 * var(--gutter)); height: var(--header-h); margin: 0 auto; background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-md); padding: 0 var(--space-5); display: flex; align-items: center; justify-content: space-between; transition: box-shadow var(--dur-fast) ease; }
+.site-header.is-scrolled .card-hd { box-shadow: var(--shadow-header); }
+.site-header .wm { font-family: var(--font-serif); font-size: var(--fs-wordmark); line-height: 1; }
+.site-header .menu { display: contents; }
+.site-header .nav { display: flex; gap: var(--space-6); font-size: var(--fs-small); }
+.site-header .nav a { text-underline-offset: 5px; text-decoration-color: var(--c-border-2); }
+.site-header .nav a:hover { text-decoration-line: underline; }
+.site-header .burger, .site-header .hdr-scrim { display: none; }
+
+@media (max-width: 899.98px) {
+  .site-header .card-hd { padding: 0 var(--space-4); }
+  .site-header .burger { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; }
+  .site-header .burger svg { width: 24px; height: 24px; }
+  .site-header .b-close, .site-header.is-open .b-open { display: none; }
+  .site-header.is-open .b-close { display: block; }
+  /* open state: separate card under the header card (Figma draft 340:2380), page dimmed by a scrim */
+  .site-header .menu { display: none; position: absolute; left: -1px; right: -1px; top: calc(100% + 2px); background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--r-md); box-shadow: var(--shadow-card); padding: var(--space-4); flex-direction: column; }
+  .site-header.is-open .menu { display: flex; }
+  .site-header .nav { flex-direction: column; gap: 0; font-size: 17px; font-weight: 600; padding: 0 var(--space-1); }
+  .site-header .nav a { display: block; padding: 15px 0; border-bottom: 1px solid var(--c-border); text-decoration: none !important; }
+  .site-header .nav a:last-child { border-bottom: 0; }
+  .site-header .menu .btn { height: 48px; width: 100%; margin-top: var(--space-2); }
+  .site-header.is-open .hdr-scrim { display: block; position: fixed; inset: 0; z-index: 0; background: rgba(22, 39, 96, .3); }
+  .site-header .hdr-scrim[hidden] { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .site-header .card-hd { transition: none; } }

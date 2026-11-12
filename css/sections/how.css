@@ -1,0 +1,50 @@
+/* How it works: centre line timeline. Ported from the mockup .tl rules. Fluid columns around the centre line (mockup: 400/160/400 in a 1040 list). */
+.how .rows { position: relative; width: min(1040px, 100%); margin: 0 auto; display: grid; gap: 8px; }
+.how .rail { position: absolute; z-index: 1; left: 50%; width: 2px; margin-left: -1px; top: var(--rt, 0px); height: var(--rh, 0px); background: var(--c-border); border-radius: 2px; overflow: hidden; }
+.how .fill { position: absolute; left: 0; top: 0; width: 100%; height: var(--f, 0px); background: linear-gradient(#fbd387, #f6a700 40%, #162760) 0 0 / 100% var(--rh, 100px) no-repeat; }
+.how .row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 160px minmax(0, 1fr); grid-template-areas: "m d t"; align-items: center; min-height: 160px; padding: 28px 40px; border-radius: 48px; transition: background-color .3s ease; }
+.how .row.flip { grid-template-areas: "t d m"; }
+.how .row.on { background: var(--c-tint); }
+.how .mark { grid-area: m; display: flex; align-items: center; gap: 16px; justify-content: flex-end; }
+.how .row.flip .mark { justify-content: flex-end; flex-direction: row-reverse; }
+.how .tile { width: 80px; height: 80px; flex: none; border-radius: 26px; display: grid; place-items: center; background: var(--c-white); border: 1px solid var(--c-border); box-shadow: var(--shadow-tile); transition: background-color .35s ease, border-color .35s ease, box-shadow .35s ease; }
+.how .tile svg { width: 34px; height: 34px; fill: none; stroke: var(--c-navy); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke .35s ease; }
+.how .row.on .tile { background: var(--c-navy); border-color: var(--c-navy); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 10px 24px rgba(22, 39, 96, .28); }
+.how .row.on .tile svg { stroke: var(--c-porcelain); }
+.how .num { width: 32px; height: 32px; flex: none; border-radius: 11px; display: grid; place-items: center; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--c-text-2); background: var(--c-tint-3); transition: background-color .35s ease, color .35s ease, box-shadow .35s ease; }
+.how .row.on .num { background: var(--c-white); color: var(--c-navy); box-shadow: 0 1px 3px rgba(10, 22, 68, .1); }
+.how .dot { grid-area: d; justify-self: center; position: relative; z-index: 2; width: 24px; height: 24px; border-radius: 8px; background: var(--c-white); border: 1px solid var(--c-border-2); transition: border-color .35s ease, box-shadow .35s ease, border-radius .35s ease; }
+.how .dot::after { content: ""; position: absolute; inset: 6px; border-radius: 50%; background: var(--c-navy); transform: scale(0); transition: transform .35s var(--ease-pop); }
+.how .row.on .dot { border-radius: 50%; border-color: transparent; box-shadow: 0 0 0 3px #fbd387, 0 0 16px 4px rgba(246, 167, 0, .45); }
+.how .row.on .dot::after { transform: scale(1); }
+.how .txt { grid-area: t; width: min(320px, 100%); display: grid; gap: 8px; }
+.how .row.flip .txt { justify-self: end; text-align: right; }
+.how .txt .t { font-family: var(--font-serif); font-weight: 400; font-size: 21px; line-height: 1.2; }
+.how .txt .d { font-size: 15px; line-height: 1.45; color: var(--c-text-2); }
+
+/* entrance (JS adds .is-js; without JS everything stays visible) */
+.how.is-js .head, .how.is-js .rows { opacity: 0; transform: translateY(32px); transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out); }
+.how.is-js.in .head, .how.is-js.in .rows { opacity: 1; transform: none; }
+.how.is-js.in .rows { transition-delay: .12s; }
+
+@media (max-width: 899.98px) {
+  .how .rows { width: 100%; gap: 6px; }
+  .how .rail { left: 24px; margin-left: -1px; }
+  .how .row, .how .row.flip { grid-template-columns: 48px minmax(0, 1fr); grid-template-areas: "d m" "d t"; align-items: start; min-height: 0; padding: 18px 16px 20px 0; row-gap: 14px; border-radius: 22px; }
+  .how .dot { align-self: start; margin-top: 15px; }
+  .how .mark, .how .row.flip .mark { justify-content: flex-start; flex-direction: row; gap: 10px; }
+  .how .tile { width: 52px; height: 52px; border-radius: 16px; }
+  .how .tile svg { width: 26px; height: 26px; }
+  .how .num { width: 30px; height: 30px; font-size: 12px; }
+  .how .txt, .how .row.flip .txt { justify-self: start; text-align: left; width: auto; }
+  .how .txt .t { font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .how, .how * { transition: none !important; }
+  .how.is-js .head, .how.is-js .rows { opacity: 1; transform: none; }
+}
+
+/* section gap measured to the mockup heading position (replaces the 160 / 80 .section rhythm) */
+.how { margin-top: 82px; }
+@media (max-width: 899.98px) { .how { margin-top: 35px; } }

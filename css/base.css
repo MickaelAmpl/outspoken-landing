@@ -1,0 +1,91 @@
+/* Base: reset, fonts, container, shared patterns. Section styles live in css/sections/. */
+
+/* ---------- fonts (self-hosted, swap) ---------- */
+@font-face { font-family: "Zodiak"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/zodiak-400.woff2") format("woff2"); }
+@font-face { font-family: "Mona Sans"; font-weight: 200 900; font-style: normal; font-display: swap;
+  src: url("../fonts/mona-sans-var-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Mona Sans"; font-weight: 200 900; font-style: normal; font-display: swap;
+  src: url("../fonts/mona-sans-var-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Geist Mono"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../fonts/geist-mono-500-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Geist Mono"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../fonts/geist-mono-500-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Kalam"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/kalam-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Kalam"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/kalam-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Kalam"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../fonts/kalam-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Kalam"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../fonts/kalam-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body, h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+h1, h2, h3, h4 { font-weight: 400; }
+ul, ol { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+[hidden] { display: none !important; }
+
+body {
+  background: var(--c-porcelain);
+  color: var(--c-navy);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* anchors: sticky header must not cover headings */
+[id] { scroll-margin-top: var(--anchor-offset); }
+
+:focus-visible { outline: 2px solid var(--c-focus); outline-offset: 2px; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+/* ---------- container ----------
+   Mockup: every block is a 1104px column centered at 1440 (168px each side); phone 343px at 375 (16px each side).
+   Real page: width = min(1104px, viewport - 2 * gutter). */
+.container { width: min(var(--container), 100% - 2 * var(--gutter)); margin-inline: auto; }
+
+/* section rhythm: 160px desktop / 80px phone between sections (a section after another section) */
+.section { margin-top: var(--section-gap); }
+
+/* ---------- eyebrow ---------- */
+.eb { font-family: var(--font-mono); font-weight: 500; font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--c-text-2); }
+@media (max-width: 899.98px) { .eb { text-wrap: balance; } }
+
+/* ---------- section head: eyebrow, h2, optional sub; centered ---------- */
+.head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--head-inner-gap); margin-bottom: var(--heading-gap); }
+.h2 { font-family: var(--font-serif); font-weight: 400; font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); max-width: var(--h2-max); text-wrap: balance; }
+.sub { font-size: var(--fs-sub); color: var(--c-text-2); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 22px; background: var(--c-navy); color: var(--c-porcelain); border-radius: var(--r-btn); font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-btn); line-height: 1; white-space: nowrap; cursor: pointer; transition: background-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease, transform var(--dur-fast) ease; }
+.btn:hover { background: var(--c-navy-hover); }
+.btn:active { transform: translateY(1px); }
+.btn.s { height: 40px; padding: 0 18px; }                 /* small (header) */
+.btn.gh { background: var(--c-white); color: var(--c-navy); box-shadow: inset 0 0 0 1px var(--c-navy); }   /* ghost */
+.btn.gh:hover { background: var(--c-tint); }
+.btn.y { background: var(--c-button); color: var(--c-navy); height: 52px; padding: 0 26px; font-size: 16px; }   /* accent (Final CTA) */
+.btn.y:hover { background: #ffb81c; }
+.btn.y:focus-visible { outline-color: var(--c-marker); }
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .btn:active { transform: none; } }
+
+/* ---------- marker underline under one heading word: <span class="ac ul">word</span> ---------- */
+.ac { position: relative; }
+.ac.ul { z-index: 0; white-space: nowrap; }
+.ac.ul::after { content: ""; position: absolute; z-index: -1; left: -.05em; right: -.07em; bottom: .02em; height: .3em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M4 8.5C38 5.5 86 6.2 132 5.2S186 3.6 196 6.4c3 1.6 2.4 6.4-1.6 8C176 16.4 120 16 72 17.2 44 17.9 18 18.4 7 17.4 1.6 16.9.4 13 1.4 10.8 2 9.6 2.8 8.8 4 8.5Z' fill='%23fbd387'/%3E%3C/svg%3E") no-repeat; background-size: 100% 100%; transform: rotate(-.6deg); pointer-events: none; }
